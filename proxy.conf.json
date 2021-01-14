@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "http://localhost/avaliador-de-produtos/public/produtos",
+        "target": "http://localhost/avaliador-de-produtos/public",
         "secure": false,
         "pathRewrite":{
             "^/api": ""

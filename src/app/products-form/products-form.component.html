@@ -1,0 +1,37 @@
+<app-header title="Formulário de Produto" [subtitle]="item.name" buttonLink="/produtos" buttonText="Voltar"></app-header>
+<div class="row mt-3">
+    <div class="col-12">
+        <app-alert #alert></app-alert>
+        <form>
+            <input type="hidden" name="id" id="id" [(ngModel)]="item.id">
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="name">Nome</label>
+                    <input type="text" name="name" id="name" [ngClass]="isInvalidField('name') ? 'form-control is-invalid' : 'form-control' " [(ngModel)]="item.name">
+                </div>
+                <div class="form-group col-6">
+                    <label for="price">Preço</label>
+                    <input type="number" name="price" id="price" [ngClass]="isInvalidField('price') ? 'form-control is-invalid' : 'form-control' " [(ngModel)]="item.price">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="description">Descrição</label>
+                    <textarea name="description" id="description" [ngClass]="isInvalidField('description') ? 'form-control is-invalid' : 'form-control' " rows="5" [(ngModel)]="item.description" ></textarea>
+                </div>
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkbox" name="active" id="active" class="custom-control-input" [(ngModel)]="item.active">
+                <label for="active" class="custom-control-label">Ativo</label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="btn-group float-right">
+            <a routerLink="/produtos" class="btn btn-danger">Cancelar</a>
+            <button type="button" (click)="save()" class="btn btn-success">Salvar</button>
+        </div>
+    </div>
+</div>
