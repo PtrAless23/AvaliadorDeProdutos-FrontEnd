@@ -13,6 +13,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AlertComponent } from './alert/alert.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductRatingsListComponent } from './product-ratings-list/product-ratings-list.component';
+import { ProductRatingsFormComponent } from './product-ratings-form/product-ratings-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FooterComponent } from './footer/footer.component';
     NotFoundComponent,
     AlertComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProductRatingsListComponent,
+    ProductRatingsFormComponent
   ],
   imports: [
     BrowserModule,

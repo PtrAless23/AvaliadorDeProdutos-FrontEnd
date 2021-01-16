@@ -19,7 +19,7 @@
                 <td>
                     <div class="btn-group">
                         <a [routerLink]="'/produtos/' + item.id" class="btn btn-success">Editar</a>
-                        
+                        <a [routerLink]="'/produtos/' + item.id + '/avaliacoes'" class="btn btn-info">Ver avaliações</a>
                         <button type="button" (click)="delete(item.id)" class="btn btn-danger">Excluir</button>
                     </div>
                 </td>
