@@ -16,7 +16,7 @@ export class ProductRatingsFormComponent implements OnInit {
   @ViewChild("alert") alert;
 
   constructor(protected route: ActivatedRoute, protected router: Router, private service: ProductRatingsService) { 
-    this.item = new ProductRating();
+    this.item = new ProductRating(); 
     this.errorFields = [];
   }
 
@@ -48,6 +48,7 @@ export class ProductRatingsFormComponent implements OnInit {
       );
     }
   }
+  
 
   isInvalidField(field) {
     return (this.errorFields.indexOf(field) != -1);
@@ -75,3 +76,4 @@ export class ProductRatingsFormComponent implements OnInit {
   }
 
 }
+

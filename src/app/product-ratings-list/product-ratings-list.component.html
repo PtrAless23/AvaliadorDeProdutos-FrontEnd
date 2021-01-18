@@ -2,28 +2,30 @@
 <div class="row mt-3">
     <div class="col-12">
         <app-alert #alert></app-alert>
-        <table class="table table-bordered">
-            <tr>
+        <table class="table table-hover">
+            <thead class="thead-dark">
                 <th>ID</th>
                 <th>Produto</th>
                 <th>Nome</th>
                 <th>Nota</th>
                 <th>Comentário</th>
                 <th>Ações</th>
-            </tr>
-            <tr *ngFor="let item of items">
-                <td>{{ item.id }}</td>
-                <td>{{ item.product_id }} - {{ item.product_name }}</td>
-                <td>{{ item.name }}</td>
-                <td>{{ item.grade }}</td>
-                <td>{{ item.comment }}</td>
-                <td>
-                    <div class="btn-group">
-                        <a [routerLink]="'/produtos/' + product_id + '/avaliacoes/' + item.id" class="btn btn-success">Editar</a>
-                        <button class="btn btn-danger" (click)="delete(item.id)">Excluir</button>
-                    </div>
-                </td>
-            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.product_id }} - {{ item.product_name }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.grade }}</td>
+                    <td>{{ item.comment }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <a [routerLink]="'/produtos/' + product_id + '/avaliacoes/' + item.id" class="btn btn-success">Editar</a>
+                            <button class="btn btn-danger" (click)="delete(item.id)">Excluir</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>      
         </table>
     </div>
 </div>

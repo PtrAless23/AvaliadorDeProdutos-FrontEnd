@@ -1,3 +1,15 @@
+<style>
+    .estrelas input[type=radio] {
+      display: none;
+    }
+    .estrelas label i.fa:before {
+      content:'\f005';
+      color: #FC0;
+    }
+    .estrelas input[type=radio]:checked ~ label i.fa:before {
+      color: #CCC;
+    }
+    </style>
 <app-header title="Formulário de avaliações de produto" [subtitle]="'Avaliação de: ' + item.name" [buttonLink]="'/produtos/' + item.product_id + '/avaliacoes'" buttonText="Voltar"></app-header>
 <div class="row mt-3">
     <div class="col-12">
@@ -9,9 +21,22 @@
                     <label for="name">Nome</label>
                     <input type="text" name="name" id="name" [ngClass]="isInvalidField('name') ? 'form-control is-invalid' : 'form-control' " [(ngModel)]="item.name">
                 </div>
-                <div class="form-group col-6">
-                    <label for="grade">Nota</label>
-                    <input type="number" min="1" max="5" name="grade" id="grade" [ngClass]="isInvalidField('grade') ? 'form-control is-invalid' : 'form-control' " [(ngModel)]="item.grade">
+                <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+                <div class="form-group col-12">
+                    <label for="estrelas">Nota</label>
+                    <div class="estrelas">
+                        <input type="radio" id="cm_star-empty" name="grade" value="" checked/>
+                        <label for="cm_star-1"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-1" name="grade" [(ngModel)]="item.grade" value="1" />
+                        <label for="cm_star-2"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-2" name="grade" [(ngModel)]="item.grade" value="2" />
+                        <label for="cm_star-3"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-3" name="grade" [(ngModel)]="item.grade" value="3" />
+                        <label for="cm_star-4"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-4" name="grade" [(ngModel)]="item.grade" value="4" />
+                        <label for="cm_star-5"><i class="fa"></i></label>
+                        <input type="radio" id="cm_star-5" name="grade" [(ngModel)]="item.grade" value="5" />
+                    </div>
                 </div>
             </div>
             <div class="form-row">
@@ -26,8 +51,8 @@
 <div class="row mt-3">
     <div class="col-12">
         <div class="btn-group float-right">
-            <a [routerLink]="'/produtos/' + item.product_id + '/avaliacoes' " class="btn btn-danger">Cancelar</a>
-            <button type="button" (click)="save()" class="btn btn-success">Salvar</button>
+            <a [routerLink]="'/produtos/' + item.product_id + '/avaliacoes' " class="btn btn-outline-danger">Cancelar</a>
+            <button type="button" (click)="save()" class="btn btn-outline-success">Salvar</button>
         </div>
     </div>
 </div>
